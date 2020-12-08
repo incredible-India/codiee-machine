@@ -1,6 +1,6 @@
 //for tthe buttons to show the code and preview
-document.getElementsByClassName('buttons')[0].innerHTML = `<button type="button" class="btn btn-primary">See Code</button>
-<button type="button" class="btn btn-info" onclick="showPreview()">Preview</button>`
+document.getElementsByClassName('buttons')[0].innerHTML = `<button type="button" class="btn btn-info" onclick="showPreview()">Preview</button>
+`
 ///////////////////////////////////////////////////////
 
 // for the asking number of the block in code 
@@ -76,22 +76,25 @@ function showall(param) {
 ///options ends here now code for the preview and  see code
 
 // for the preview code starts from here 
-function showPreview(){
+function showPreview()
+{
+
+  document.getElementsByClassName('preview')[0].innerHTML=""
+  document.getElementsByClassName('btns')[0].innerHTML=""//latar we will insert the tags
   //this will hide the show options 
   document.getElementsByClassName('preview')[0].style.display ="block"
-  document.getElementsByTagName('form')[0].style.display="none"
-  document.getElementsByClassName('askform')[0].style.display="none"
-  document.getElementsByClassName('buttons')[0].style.display="none"
+  document.getElementsByClassName('btns')[0].style.display ="block"//show the button of get the code and preview
+  document.getElementsByTagName('form')[0].style.display="none" //form asking number of heading
+  document.getElementsByClassName('askform')[0].style.display="none"//titles heading paragraph color and size
+  document.getElementsByClassName('buttons')[0].style.display="none"//preview button
+  document.getElementsByClassName('codebutton')[0].style.display="none"//button inside the copy code
+  document.getElementsByClassName('gtcode')[0].style.display="none";//code to copy
 
 
-  document.getElementsByClassName('preview')[0].innerHTML = `<button type="button" class="btn btn-info" onclick='showAndHide()'> Edit </button>`
+  // document.getElementsByClassName('preview')[0].innerHTML = `<button type="button" class="btn btn-info" onclick='showAndHide()'> Edit </button>`
+  // document.getElementsByClassName('preview')[0].innerHTML += `<button type="button" class="btn btn-dark" onclick='getTheCode()' style="margin-left:10px;"> Get The Code </button>`
 
-  function showAndHide() {
-    document.getElementsByClassName('preview')[0].style.display="none"
-    document.getElementsByTagName('form')[0].style.display="block"
-    document.getElementsByClassName('askform')[0].style.display="block"
-    document.getElementsByClassName('askform')[0].style.display="block"
-  }
+
   // for showing the preview 
     Array.from(document.getElementsByClassName('title')).forEach(insertIT)
     
@@ -101,15 +104,71 @@ function showPreview(){
       
         document.getElementsByClassName('preview')[0].innerHTML +=`<${document.getElementsByClassName('size')[index].value} style = "color: ${document.getElementsByClassName('color')[index].value};">${element.value}</${document.getElementsByClassName('size')[index].value}>
         <p>${document.getElementsByClassName('para')[index].value}</p>
-        <br>`      
+        `      
      
   
       
     }
+    document.getElementsByClassName('btns')[0].innerHTML = `<button type="button" class="btn btn-info" onclick='showAndHide()'> Edit </button>`
+    document.getElementsByClassName('btns')[0].innerHTML += `<button type="button" class="btn btn-dark" onclick='getTheCode()' style="margin-left:10px;"> Get The Code </button>`
+    //  document.getElementsByClassName('btns')[0].innerHTML += `<button type="button" class="btn btn-dark" onclick='getTheCode()' style="margin-left:10px;"> Get The Code </button>`
     // document.getElementsByClassName('askform')[0].innerHTML =`<${document.getElementsByClassName('size')[0].value}> ${document.getElementsByClassName('title')[0].value}</${document.getElementsByClassName('size')[0].value}>
     
     // <p> ${document.getElementsByClassName('para')[0].value}</p>`
 
     
   
+}
+
+//this will toggle like whenever user will click preview ,preview will be shown and if user click again on 'edit' button it will show all the options filled by user 
+function showAndHide()
+ {
+  document.getElementsByClassName('preview')[0].style.display="none";
+  document.getElementsByClassName('btns')[0].style.display="none";
+  document.getElementsByTagName('form')[0].style.display="flex";
+  document.getElementsByClassName('askform')[0].style.display="block";
+  document.getElementsByClassName('buttons')[0].style.display="block";
+  document.getElementsByClassName('codebutton')[0].style.display="none"
+  document.getElementsByClassName('gtcode')[0].style.display="none";
+}
+
+//now for the source code (when user will click on 'get the code')
+function getTheCode()
+{
+  document.getElementsByClassName('preview')[0].style.display="none";//preview page
+  document.getElementsByClassName('btns')[0].style.display="none";//button of show code nad preview
+  document.getElementsByTagName('form')[0].style.display="none";//form asking number of headings
+  document.getElementsByClassName('askform')[0].style.display="none";//color size and title
+  document.getElementsByClassName('buttons')[0].style.display="none";//button of preview
+
+  document.getElementsByClassName('gtcode')[0].style.display="block";//code to copy
+  
+  document.getElementsByClassName('codebutton')[0].innerHTML=""//for the buttons inside the code
+
+  //final code 
+
+  document.getElementsByClassName('language-html')[0].innerText =`<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>Codiee Machine</title>
+
+      </head>
+
+      <body>
+
+      ${document.getElementsByClassName('preview')[0].innerHTML}
+
+      </body>
+
+      </html>`
+
+      document.getElementsByClassName('codebutton')[0].innerHTML =`<button type="button" class="btn btn-info" onclick="showPreview()"> Preview </button>`
+      document.getElementsByClassName('codebutton')[0].innerHTML +=`<button type="button" class="btn btn-warning" onclick='showAndHide()' style="margin-left:10px;"> Edit </button>`
+
+      document.getElementsByClassName('codebutton')[0].style.display="block"//after getting the code two option will be there
+
 }
