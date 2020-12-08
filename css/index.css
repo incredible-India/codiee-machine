@@ -1,0 +1,28 @@
+.ask{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+@media  (max-width: 600px) {
+  .ask{
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 32px;
+    padding: 15px;
+   
+  }
+  .askheading
+  {
+    margin-bottom: 8px;
+  }
+  }
+
+  .lol{
+    background-image: linear-gradient(to right,black,#632563);
+    color: wheat;
+  }
+  .lool{
+    background-image: linear-gradient(to right,black,#256396);
+    color: wheat;
+  }
