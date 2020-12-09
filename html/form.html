@@ -32,7 +32,7 @@
         <!-- fot the title of the form  -->
         <div class="input-group flex-nowrap">
             <span class="input-group-text" id="addon-wrapping">Title</span>
-            <input type="text" class="form-control" placeholder="Form`s Title" aria-label="Username" aria-describedby="addon-wrapping">
+            <input type="text" class="form-control frmtitle" placeholder="Form`s Title" aria-label="Username" aria-describedby="addon-wrapping" autofocus>
           </div>
 
      <!-- number of componants  -->
@@ -80,6 +80,10 @@
 
 
       <div class="NTi" style="display:none;">
+
+        <div class="alert alert-warning" role="alert" style="display: none;">
+            You did not enter the Title of the form ,If you want to get Title of form  go back fill the form... 
+          </div>
     
       </div>
 
@@ -100,11 +104,27 @@
 
     <div class="nextbtn" style="display: none;">
         <!-- preview button  -->
-        <button type="button" class="btn btn-primary nexti" style="margin: 5px;"> Preview </button>
+        <button type="button" class="btn btn-primary SHWpreview" style="margin: 5px;"> Preview </button>
         <button type="button" class="btn btn-success backbtns" style="margin: 5px;"> Back </button>
 
     </div>
 
+
+    <!-- for the preview
+     -->
+
+     <div class="previews" style="display: none;">
+
+     </div>
+
+     <div class="previewBTN" style="display: none;">
+
+        <button type="button" class="btn btn-dark gtCode" style="margin: 5px;">Get The Code</button>
+        <button type="button" class="btn btn-warning backbtn" style="margin: 5px;"> Edit </button>
+
+     </div>
+
+     <!-- ---------------------------------------------------------------------------------------------- -->
 
  </body>
 

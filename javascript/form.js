@@ -16,7 +16,7 @@ startedButton.addEventListener('click'
         }
 
     }
- 
+    document.getElementsByClassName('alert-danger')[0].style.display="none";
     showOPT(myOpt)//function for the further operations
 
 })//click event
@@ -26,6 +26,9 @@ startedButton.addEventListener('click'
 // now the function asking for the number of widgets and their titles 
 
 function showOPT(UserOPT){
+
+    
+
 
     document.getElementsByClassName('NTi')[0].innerHTML =""//first we will  keep it blank
 
@@ -67,6 +70,7 @@ function ShowHide(){
 //for the next button after that preview buttons will show
 document.getElementsByClassName('next')[0].addEventListener('click',()=>{
 
+ 
 
     //for removing the alert danger box after ccliking on number box
     Array.from(document.getElementsByClassName('numbers')).forEach(element =>{
@@ -118,7 +122,7 @@ document.getElementsByClassName('next')[0].addEventListener('click',()=>{
 
     document.getElementsByClassName('title')[0].innerHTML ="";
 
-
+     askAndShowPreview();//this will ask the title of form widget and the give  the options for the preview
 
 
    
@@ -131,6 +135,7 @@ document.getElementsByClassName('next')[0].addEventListener('click',()=>{
 //for backbutton in preview buttons page
 document.getElementsByClassName('backbtns')[0].addEventListener('click',()=>{
 
+   
     document.getElementsByClassName('NTi')[0].style.display="block";
     document.getElementsByClassName('buttonpreview')[0].style.display="block";
     document.getElementsByClassName('formopt')[0].style.display="none";
@@ -142,3 +147,50 @@ document.getElementsByClassName('backbtns')[0].addEventListener('click',()=>{
 })
 
 
+//for asking the title and showing option for the preview 
+function askAndShowPreview() {
+    
+   
+    for (i=0;i<myOpt.length;i++)
+    {
+       
+        for(let j=0 ;j < document.getElementById(`floatingInputGrid${i}`).value;j++)
+        {
+            document.getElementsByClassName('title')[0].innerHTML +=`<div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3${j}${i}">${j+1}: Title of ${myOpt[i]} </span>
+            <input type="text" class="form-control" id="basic-url${j}${i}" aria-describedby="basic-addon3">
+          </div>`;
+        }
+    }
+
+}
+
+
+// now its time for the showing the preview 
+document.getElementsByClassName('SHWpreview')[0].addEventListener('click',()=>{
+
+    document.getElementsByClassName('NTi')[0].style.display="none";
+    document.getElementsByClassName('buttonpreview')[0].style.display="none";
+    document.getElementsByClassName('formopt')[0].style.display="none";
+    document.getElementsByClassName('nextbtn')[0].style.display="none";
+    document.getElementsByClassName('title')[0].style.display="none";
+    document.getElementsByClassName('previews')[0].style.display="block"
+    document.getElementsByClassName('previewBTN')[0].style.display="block"
+
+
+
+    
+})
+
+//for the back button in the preview page
+document.getElementsByClassName('backbtn')[0].addEventListener('click',()=>{
+
+    document.getElementsByClassName('NTi')[0].style.display="none";
+    document.getElementsByClassName('buttonpreview')[0].style.display="none";
+    document.getElementsByClassName('formopt')[0].style.display="none";
+    document.getElementsByClassName('nextbtn')[0].style.display="block";
+    document.getElementsByClassName('title')[0].style.display="block";
+    document.getElementsByClassName('previews')[0].style.display="none"
+    document.getElementsByClassName('previewBTN')[0].style.display="none"
+
+})
