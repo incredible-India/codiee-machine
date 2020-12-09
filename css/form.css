@@ -9,6 +9,9 @@
         flex-direction: column;
         justify-content: space-around;
         padding: 6px;
+        font-family: none;
+    font-size: 23px;
+    color: black;
 
     }
 }
