@@ -67,6 +67,49 @@ function ShowHide(){
 //for the next button after that preview buttons will show
 document.getElementsByClassName('next')[0].addEventListener('click',()=>{
 
+
+    //for removing the alert danger box after ccliking on number box
+    Array.from(document.getElementsByClassName('numbers')).forEach(element =>{
+        element.addEventListener('click',()=>{
+            element.style.border  ="1px solid skyblue"
+            document.getElementsByClassName('alert-danger')[0].style.display="none";
+        })
+    })
+    // cheking the validation that user wont input the 0 or negative or blank
+
+    for(i=0;i<myOpt.length;i++)
+
+    {
+        // document.getElementById(`floatingInputGrid${i}`).value
+        //for showing error in and message to user we used alert box here
+        if(document.getElementById(`floatingInputGrid${i}`).value <= 0 )
+        {
+          
+            
+                document.getElementById(`floatingInputGrid${i}`).style.border ="1px solid red"
+
+                document.getElementsByClassName('alert-danger')[0].innerText ="Number box Cannot be blank or Zero or neagtive or fractional ,please fill the postive non-zero integer or remove it by clicking back button"
+               
+                document.getElementsByClassName('alert-danger')[0].style.display="block"
+                return ;
+            
+         
+        
+        }
+         if(parseInt(document.getElementById(`floatingInputGrid${i}`).value) != document.getElementById(`floatingInputGrid${i}`).value )
+         {
+            document.getElementById(`floatingInputGrid${i}`).style.border ="1px solid red"
+
+            document.getElementsByClassName('alert-danger')[0].innerText ="Number box Cannot be blank or Zero or neagtive or fractional ,please fill the postive non-zero integer or remove it by clicking back button"
+           
+            document.getElementsByClassName('alert-danger')[0].style.display="block"
+            return ;
+         }
+       
+          
+        
+    }
+//if there is no error or 0 input negative input then it will execute
     document.getElementsByClassName('NTi')[0].style.display="none";
     document.getElementsByClassName('buttonpreview')[0].style.display="none";
     document.getElementsByClassName('formopt')[0].style.display="none";
@@ -75,10 +118,10 @@ document.getElementsByClassName('next')[0].addEventListener('click',()=>{
 
     document.getElementsByClassName('title')[0].innerHTML ="";
 
-    for(i=0;i<myOpt.length;i++)
-    {
-        console.log(myOpt);
-    }
+
+
+
+   
 
 
 
