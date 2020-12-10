@@ -172,3 +172,5 @@ function getTheCode()
       document.getElementsByClassName('codebutton')[0].style.display="block"//after getting the code two option will be there
 
 }
+
+//////////////End///////////////

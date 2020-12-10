@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK-FORM</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../prism/prism.css">
+<link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <h1  style="letter-spacing: 3px; margin-left: 10px;">Codiee<span class="badge badge-warning my-3 mb-3" style="letter-spacing: 3px;"> Machine</span></h1>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="./heading.html">Headings & Paragraphs</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Form</li>
+        </ol>
+      </nav>
+    <hr>
+
+  
+
+    <div class="alert alert-danger" role="alert" style="display: none;">
+       
+      </div>
+    
+    <div class="formopt">
+      <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 10px; color: black;">Select The Componants Of Your Form</h2>
+      <hr>
+        <!-- fot the title of the form  -->
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Title</span>
+            <input type="text" class="form-control frmtitle" placeholder="Form`s Title" aria-label="Username" aria-describedby="addon-wrapping" autofocus>
+          </div>
+          <!-- <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 10px;">Select The Componants Of Your Form</h2> -->
+     <!-- number of componants  -->
+     <div class="allopt">
+     <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="text" checked>
+        <label class="form-check-label" for="inlineCheckbox1">Text Box</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="textarea">
+        <label class="form-check-label" for="inlineCheckbox2">Text Area</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="password">
+        <label class="form-check-label" for="inlineCheckbox3">Password</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="date">
+        <label class="form-check-label" for="inlineCheckbox4">D.O.B</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="email">
+        <label class="form-check-label" for="inlineCheckbox5">Email</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="number">
+        <label class="form-check-label" for="inlineCheckbox6">Number Box</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="radio">
+        <label class="form-check-label" for="inlineCheckbox7">Radio Buttons</label>
+      </div>
+      <!-- <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="select box">
+        <label class="form-check-label" for="inlineCheckbox8">Select Box</label>
+
+        <!-- add bootstrap  -->
+     
+        
+        <button type="button" class="btn btn-info start" style="margin: 5px;">Get Started</button>
+      </div>
+      <!-- nuber of widget and thier name  -->
+     
+    </div>
+
+
+      <div class="NTi" style="display:none;">
+
+        <div class="alert alert-warning" role="alert" style="display: none;">
+            You did not enter the Title of the form ,If you want to get Title of form  go back fill the form... 
+          </div>
+    
+      </div>
+
+      <div class="buttonpreview" style="display: none;">
+
+        <button type="button" class="btn btn-primary next" style="margin: 5px;">Next</button>
+        <button type="button" class="btn btn-success backbtn" style="margin: 5px;"> Back </button>
+
+      </div>
+
+    <!-- done---------------------- -->
+
+    <div class="title" style="display: none;">
+
+      
+
+    </div>
+
+    <div class="nextbtn" style="display: none;">
+        <!-- preview button  -->
+        <button type="button" class="btn btn-primary SHWpreview" style="margin: 5px;"> Preview </button>
+        <button type="button" class="btn btn-success backbtns" style="margin: 5px;"> Back </button>
+
+    </div>
+
+
+    <!-- for the preview
+     -->
+
+     <div class="previews" style="display: none;">
+
+     </div>
+
+     <div class="previewBTN" style="display: none;">
+
+        <button type="button" class="btn btn-dark gtCode" style="margin: 5px;">Get The Code</button>
+        <button type="button" class="btn btn-warning backbtni" style="margin: 5px;"> Edit </button>
+
+     </div>
+
+     <!-- ---------------------------------------------------------------------------------------------- -->
+
+ </body>
+
+
+<script src="../javascript/form.js"></script>
+<script src="../prism/prism.js"></script>
+
+
+</html>
+
+<!-- <input type="text">
+<input type="email" name="" id="">
+<input type="password" name="" id="">
+<textarea name="" id="" cols="30" rows="10"></textarea>
+<input type="radio" name="" id="">
+<input type="number" name="" id="">
+<input type="date" name="" id=""> -->
