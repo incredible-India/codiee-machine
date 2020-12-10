@@ -8,7 +8,7 @@ startedButton.addEventListener('click'
         myOpt.length=0;
  
 
-    for(i=1;i<=8;i++)
+    for(i=1;i<=7;i++)
     {
         if(document.getElementById(`inlineCheckbox${i}`).checked == true)
         {
@@ -157,8 +157,8 @@ function askAndShowPreview() {
         for(let j=0 ;j < document.getElementById(`floatingInputGrid${i}`).value;j++)
         {
             document.getElementsByClassName('title')[0].innerHTML +=`<div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon3${j}${i}">${j+1}: Title of ${myOpt[i]} </span>
-            <input type="text" class="form-control" id="basic-url${j}${i}" aria-describedby="basic-addon3">
+            <span class="input-group-text " id="basic-addon3${j}${i}">Title of ${j+1}'s ${myOpt[i]}  </span>
+            <input type="text" class="form-control insertit" id="basic-url${j}${i}" aria-describedby="basic-addon3">
           </div>`;
         }
     }
@@ -177,6 +177,8 @@ document.getElementsByClassName('SHWpreview')[0].addEventListener('click',()=>{
     document.getElementsByClassName('previews')[0].style.display="block"
     document.getElementsByClassName('previewBTN')[0].style.display="block"
 
+    finalPreview();//it will show the finally preview of user forms
+
 
 
     
@@ -194,3 +196,49 @@ document.getElementsByClassName('backbtni')[0].addEventListener('click',()=>{
     document.getElementsByClassName('previewBTN')[0].style.display="none"
 
 })
+
+//function for showing the preview
+
+    function finalPreview() {
+       
+        let titleName ="";
+
+        if(document.getElementsByClassName('frmtitle')[0].value == "")
+        {
+          titleName ="Coddie Machine"
+        }else
+        {
+        titleName =document.getElementsByClassName('frmtitle')[0].value
+            }//cheking either the user filled up the title of the form or not , if not by default it will codiee machine
+
+
+        document.getElementsByClassName('previews')[0].innerHTML=""//initially we will keep it blank
+
+        document.getElementsByClassName('previews')[0].innerHTML =`<form class="myform">
+        <h1>${titleName} </h1> </form>`
+
+
+        document.getElementsByClassName('myform')[0].innerHTML ="";//this class is from the created form tag 
+
+        let numberofloop =0;
+
+        for(i =0 ; i<myOpt.length ; i++ )
+        {
+           
+                for(let k=0; k<document.getElementsByClassName('numbers')[i].value;k++)
+                {
+                   
+                    document.getElementsByClassName('myform')[0].innerHTML +=`
+                    <label>${document.getElementsByClassName('insertit')[numberofloop].value}</label>
+                    <input type="${myOpt[i]}" class="form-control">
+                    `
+                    numberofloop++;
+                }
+              
+        
+       }
+
+    //    document.getElementsByClassName('previews')[0].innerHTML += document.getElementsByClassName('myform')[0].innerHTML
+      
+
+    }
