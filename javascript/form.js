@@ -183,7 +183,7 @@ document.getElementsByClassName('SHWpreview')[0].addEventListener('click',()=>{
 })
 
 //for the back button in the preview page
-document.getElementsByClassName('backbtn')[0].addEventListener('click',()=>{
+document.getElementsByClassName('backbtni')[0].addEventListener('click',()=>{
 
     document.getElementsByClassName('NTi')[0].style.display="none";
     document.getElementsByClassName('buttonpreview')[0].style.display="none";
