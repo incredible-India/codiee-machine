@@ -205,7 +205,7 @@ document.getElementsByClassName('backbtni')[0].addEventListener('click',()=>{
 
         if(document.getElementsByClassName('frmtitle')[0].value == "")
         {
-          titleName ="Codiee Machine"
+          titleName ="Coddie Machine"
         }else
         {
         titleName =document.getElementsByClassName('frmtitle')[0].value
@@ -214,16 +214,11 @@ document.getElementsByClassName('backbtni')[0].addEventListener('click',()=>{
 
         document.getElementsByClassName('previews')[0].innerHTML=""//initially we will keep it blank
 
-        
+        document.getElementsByClassName('previews')[0].innerHTML =`<form class="myform">
+        <h1>${titleName} </h1> </form>`
 
-        document.getElementsByClassName('previews')[0].innerHTML =`
-                                                                     <h1>${titleName} </h1> 
-                                                                     <form class="myform">
-                                                                     </form>`
 
         document.getElementsByClassName('myform')[0].innerHTML ="";//this class is from the created form tag 
-
-       
 
         let numberofloop =0;
 
@@ -232,113 +227,18 @@ document.getElementsByClassName('backbtni')[0].addEventListener('click',()=>{
            
                 for(let k=0; k<document.getElementsByClassName('numbers')[i].value;k++)
                 {
-                   if(myOpt[i]=="textarea")
-                   {
+                   
                     document.getElementsByClassName('myform')[0].innerHTML +=`
-                    <div class="form-group">
-                     <label for="exampleFormControlTextarea2${numberofloop}">${document.getElementsByClassName('insertit')[numberofloop].value}</label>
-                          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2${numberofloop}" rows="3"></textarea>
-                                            </div>
+                    <label>${document.getElementsByClassName('insertit')[numberofloop].value}</label>
+                    <input type="${myOpt[i]}" class="form-control">
                     `
-
-
-                   }else if(myOpt[i] == "radio")
-                   {
-                    document.getElementsByClassName('myform')[0].innerHTML +=`
-                    
-                    <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="defaultGroupExample2${numberofloop}" name="urchoice" checked>
-                        <label class="custom-control-label" for="defaultGroupExample2${numberofloop}">${document.getElementsByClassName('insertit')[numberofloop].value}</label>
-                    </div>
-                    `
-                    
-
-                   }
-                   else
-                   {
-                    document.getElementsByClassName('myform')[0].innerHTML +=`
-                    <label for="lable${numberofloop}">${document.getElementsByClassName('insertit')[numberofloop].value}</label>
-                    <input type="${myOpt[i]}" class="form-control" id="lable${numberofloop}">
-                    `
-                   }
-                  
                     numberofloop++;
                 }
               
-                
+        
        }
 
-    
-               document.getElementsByClassName('myform')[0].innerHTML += `<div style="margin-top: 16px;
-               letter-spacing: 5px;">
-              <button type="submit" class="btn btn-success">Submit</button>
-            <button type="reset" class="btn btn-warning">Reset</button>
-             </div>
-             <hr>
-                                                                `
-             //at the end we added submit and reset button
+    //    document.getElementsByClassName('previews')[0].innerHTML += document.getElementsByClassName('myform')[0].innerHTML
+      
+
     }
-    
-
-    //after a lot of  headache i did  the above code, now its time for the show source code to user.....
-
-
-    // for back button in source code page  
-    document.getElementsByClassName('goPreview')[0].addEventListener('click',()=>{
-        
-        //what to show on this event
-        
-        document.getElementsByClassName('previews')[0].style.display="block";
-        document.getElementsByClassName('previewBTN')[0].style.display="block";
-        document.getElementsByClassName('goBack')[0].style.display="none";
-        document.getElementsByClassName('SourceCode')[0].style.display="none"
-
-    })
-
-//now show the source code to user
-
-document.getElementsByClassName('gtCode')[0].addEventListener('click',()=>{
-  //what to show on this event
-  document.getElementsByClassName('NTi')[0].style.display="none";
-  document.getElementsByClassName('buttonpreview')[0].style.display="none";
-  document.getElementsByClassName('formopt')[0].style.display="none";
-  document.getElementsByClassName('previews')[0].style.display="none"
-  document.getElementsByClassName('previewBTN')[0].style.display="none"
-  document.getElementsByClassName('nextbtn')[0].style.display="none";
-  document.getElementsByClassName('title')[0].style.display="none";
-  document.getElementsByClassName('goBack')[0].style.display="block";
-  document.getElementsByClassName('SourceCode')[0].style.display="block"
-
-  ///////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-  
-
-//   </div> </html>`
-document.getElementsByClassName('language-html')[0].innerText =` <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codiee Machine</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-</head>
-<body>
-<div style="margin : 10px 10px ;">
-${document.getElementsByClassName('previews')[0].innerHTML}
-</div>
-</body>
-</html>`
-
-})
-
-///End of this code
