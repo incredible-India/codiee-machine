@@ -50,3 +50,20 @@
     box-sizing: border-box;
     margin: 24px 25px;
 }
+
+.SourceCode{
+    box-sizing: border-box;
+    margin: 24px 25px;
+}
+
+.goBack{
+    box-sizing: border-box;
+    margin: 24px 25px;
+}
+.goPreview{
+    background-image: linear-gradient(to right,#000,#009);
+    color: white;
+}
+.goPreview:hover{
+    color: yellow;
+}
