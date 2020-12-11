@@ -43,10 +43,7 @@
         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="text" checked>
         <label class="form-check-label" for="inlineCheckbox1">Text Box</label>
       </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="textarea">
-        <label class="form-check-label" for="inlineCheckbox2">Text Area</label>
-      </div>
+    
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="password">
         <label class="form-check-label" for="inlineCheckbox3">Password</label>
@@ -66,6 +63,10 @@
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="radio">
         <label class="form-check-label" for="inlineCheckbox7">Radio Buttons</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="textarea">
+        <label class="form-check-label" for="inlineCheckbox2">Text Area</label>
       </div>
       <!-- <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="select box">
@@ -129,13 +130,20 @@
      <!-- ---------------------------------------------------------------------------------------------- -->
 
      <!-- now for the source code -->
-     <div class="SourceCode">
+     <div class="SourceCode" style=" display: none;">
+      <pre style="height: 500px; margin:20px;"><code class="language-html">
 
-     </div>
+      </code></pre>
+   
 
-     <div class="goback" style="display: none;">
+     <div class="goBack" style="display: none;">
 
-      <button type="button" class="btn btn-light goPreview" style="margin: 5px;"> Edit </button>
+      <button type="button" class="btn btn-light goPreview" style="margin: 2px;"> See Preview </button>
+
+      <div class="alert alert-warning" role="alert" style="margin-top: 7px;">
+       We Used Bootstrap in this code for making it responsive,if you want to remove it ,Just remove all the 'link' and 'script'
+       tags from the code .(After Removing Bootstrap code looks like as a raw HTML Without CSS)  
+      </div>
 
      </div>
 
@@ -148,10 +156,3 @@
 
 </html>
 
-<!-- <input type="text">
-<input type="email" name="" id="">
-<input type="password" name="" id="">
-<textarea name="" id="" cols="30" rows="10"></textarea>
-<input type="radio" name="" id="">
-<input type="number" name="" id="">
-<input type="date" name="" id=""> -->

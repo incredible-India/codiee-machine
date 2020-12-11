@@ -271,24 +271,74 @@ document.getElementsByClassName('backbtni')[0].addEventListener('click',()=>{
     
                document.getElementsByClassName('myform')[0].innerHTML += `<div style="margin-top: 16px;
                letter-spacing: 5px;">
-                                                                <button type="submit" class="btn btn-success">Submit</button>
-                                                                <button type="reset" class="btn btn-warning">Reset</button>
-                                                                </div>
-                                                                <hr>
+              <button type="submit" class="btn btn-success">Submit</button>
+            <button type="reset" class="btn btn-warning">Reset</button>
+             </div>
+             <hr>
                                                                 `
              //at the end we added submit and reset button
     }
     
 
-    //after a lot headache i done the above code now its time for the show source code to user.....
+    //after a lot of  headache i did  the above code, now its time for the show source code to user.....
 
 
     // for back button in source code page  
     document.getElementsByClassName('goPreview')[0].addEventListener('click',()=>{
-
-        document.getElementsByClassName('nextbtn')[0].style.display="block";
-        document.getElementsByClassName('title')[0].style.display="block";
+        
+        //what to show on this event
+        
+        document.getElementsByClassName('previews')[0].style.display="block";
+        document.getElementsByClassName('previewBTN')[0].style.display="block";
         document.getElementsByClassName('goBack')[0].style.display="none";
         document.getElementsByClassName('SourceCode')[0].style.display="none"
 
     })
+
+//now show the source code to user
+
+document.getElementsByClassName('gtCode')[0].addEventListener('click',()=>{
+  //what to show on this event
+  document.getElementsByClassName('NTi')[0].style.display="none";
+  document.getElementsByClassName('buttonpreview')[0].style.display="none";
+  document.getElementsByClassName('formopt')[0].style.display="none";
+  document.getElementsByClassName('previews')[0].style.display="none"
+  document.getElementsByClassName('previewBTN')[0].style.display="none"
+  document.getElementsByClassName('nextbtn')[0].style.display="none";
+  document.getElementsByClassName('title')[0].style.display="none";
+  document.getElementsByClassName('goBack')[0].style.display="block";
+  document.getElementsByClassName('SourceCode')[0].style.display="block"
+
+  ///////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+  
+
+//   </div> </html>`
+document.getElementsByClassName('language-html')[0].innerText =` <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codiee Machine</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div style="margin : 10px 10px ;">
+${document.getElementsByClassName('previews')[0].innerHTML}
+</div>
+</body>
+</html>`
+
+})
+
+///End of this code
