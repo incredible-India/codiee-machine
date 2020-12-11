@@ -205,7 +205,7 @@ document.getElementsByClassName('backbtni')[0].addEventListener('click',()=>{
 
         if(document.getElementsByClassName('frmtitle')[0].value == "")
         {
-          titleName ="Coddie Machine"
+          titleName ="Codiee Machine"
         }else
         {
         titleName =document.getElementsByClassName('frmtitle')[0].value
@@ -214,11 +214,16 @@ document.getElementsByClassName('backbtni')[0].addEventListener('click',()=>{
 
         document.getElementsByClassName('previews')[0].innerHTML=""//initially we will keep it blank
 
-        document.getElementsByClassName('previews')[0].innerHTML =`<form class="myform">
-        <h1>${titleName} </h1> </form>`
+        
 
+        document.getElementsByClassName('previews')[0].innerHTML =`
+                                                                     <h1>${titleName} </h1> 
+                                                                     <form class="myform">
+                                                                     </form>`
 
         document.getElementsByClassName('myform')[0].innerHTML ="";//this class is from the created form tag 
+
+       
 
         let numberofloop =0;
 
@@ -227,18 +232,63 @@ document.getElementsByClassName('backbtni')[0].addEventListener('click',()=>{
            
                 for(let k=0; k<document.getElementsByClassName('numbers')[i].value;k++)
                 {
-                   
+                   if(myOpt[i]=="textarea")
+                   {
                     document.getElementsByClassName('myform')[0].innerHTML +=`
-                    <label>${document.getElementsByClassName('insertit')[numberofloop].value}</label>
-                    <input type="${myOpt[i]}" class="form-control">
+                    <div class="form-group">
+                     <label for="exampleFormControlTextarea2${numberofloop}">${document.getElementsByClassName('insertit')[numberofloop].value}</label>
+                          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2${numberofloop}" rows="3"></textarea>
+                                            </div>
                     `
+
+
+                   }else if(myOpt[i] == "radio")
+                   {
+                    document.getElementsByClassName('myform')[0].innerHTML +=`
+                    
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="defaultGroupExample2${numberofloop}" name="urchoice" checked>
+                        <label class="custom-control-label" for="defaultGroupExample2${numberofloop}">${document.getElementsByClassName('insertit')[numberofloop].value}</label>
+                    </div>
+                    `
+                    
+
+                   }
+                   else
+                   {
+                    document.getElementsByClassName('myform')[0].innerHTML +=`
+                    <label for="lable${numberofloop}">${document.getElementsByClassName('insertit')[numberofloop].value}</label>
+                    <input type="${myOpt[i]}" class="form-control" id="lable${numberofloop}">
+                    `
+                   }
+                  
                     numberofloop++;
                 }
               
-        
+                
        }
 
-    //    document.getElementsByClassName('previews')[0].innerHTML += document.getElementsByClassName('myform')[0].innerHTML
-      
-
+    
+               document.getElementsByClassName('myform')[0].innerHTML += `<div style="margin-top: 16px;
+               letter-spacing: 5px;">
+                                                                <button type="submit" class="btn btn-success">Submit</button>
+                                                                <button type="reset" class="btn btn-warning">Reset</button>
+                                                                </div>
+                                                                <hr>
+                                                                `
+             //at the end we added submit and reset button
     }
+    
+
+    //after a lot headache i done the above code now its time for the show source code to user.....
+
+
+    // for back button in source code page  
+    document.getElementsByClassName('goPreview')[0].addEventListener('click',()=>{
+
+        document.getElementsByClassName('nextbtn')[0].style.display="block";
+        document.getElementsByClassName('title')[0].style.display="block";
+        document.getElementsByClassName('goBack')[0].style.display="none";
+        document.getElementsByClassName('SourceCode')[0].style.display="none"
+
+    })
